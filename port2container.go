@@ -7,7 +7,10 @@ import(
 
 func main() {
     if env.DEBUG {
-    iptables.Opps()
-    fmt.Printf("Hi opps")
+    output,err := iptables.Exec("-L")
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Printf("YoYo %s",output)
     }
 }
