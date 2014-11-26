@@ -13,3 +13,8 @@ port2container unregistry <port2container-id>
 対象のGit RepoにどのようにContainerをDeployするか記述する設定ファイルを設ける
 ex.) Memory, CPU, Forward Port(docker-proxy), Attach Revere Proxy(nginx.conf, port information)
 
+
+
+1. iptablesを操作するpkgを作る
+2. dockerを操作するpkgを作る
+3. nginxを操作するpkgを作る
