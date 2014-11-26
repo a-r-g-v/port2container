@@ -1,0 +1,15 @@
+// GitRepoからDockerBuildして，Port2Containerで管理を可能にする
+port2container registry <repo> 
+
+// Dockerコンテナを起動するようにDeployするやつ
+port2container deploy <port2container-id>
+
+// DockerコンテナのDeployを解除するやつ
+port2container undeploy <port2container-id>
+
+//  Port2ContainerのManaged Databaseから登録を解除するやつ
+port2container unregistry <port2container-id>
+
+対象のGit RepoにどのようにContainerをDeployするか記述する設定ファイルを設ける
+ex.) Memory, CPU, Forward Port(docker-proxy), Attach Revere Proxy(nginx.conf, port information)
+
