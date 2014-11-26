@@ -3,6 +3,7 @@ package iptables
 import (
     "fmt"
     "os/exec"
+    "env"
 )
 var (
     xtableSupport = false
@@ -12,9 +13,14 @@ var (
 
 func init() {
     xtableSupport = exec.Command("iptables","--wait","-L","-n").Run() == nil
+
+    if env.DEBUG {
     fmt.Printf("Xtables is support: %t\n",xtableSupport)
+    }
 }
 
 func Opps() {
+    if env.DEBUG {
     fmt.Println("Opps")
+    }
 }
