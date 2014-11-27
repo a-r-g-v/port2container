@@ -5,10 +5,17 @@ import(
     "iptables"
     "env"
     "docker"
+    "os"
 )
 
 
 func main()  {
+
+    if os.Geteuid() != 0 {
+        fmt.Println("must be superuser")
+        os.Exit(-1)
+    }
+
     // Load Env Value
     _, err := env.Load()    
     if err != nil {
