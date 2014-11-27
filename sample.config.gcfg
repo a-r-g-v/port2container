@@ -1,0 +1,9 @@
+[general]
+http_proxy = true
+
+[nginx]
+http_port = 80
+https_port = 443
+conf_dir = /etc/nginx/sites-enabled/
+
+

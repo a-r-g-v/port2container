@@ -27,6 +27,11 @@ func Exists(args ...string) bool {
         if _, err := Exec(append([]string{"-C"}, args...)...); err == nil {
             return true
         }
+
+
+        rule := strings.Replace(strings.Join(args, " "), "-t nat", "", -1)
+        fmt.Printf("%s",rule)
+        return false
 }
 
 // Exec Add iptables-entry
