@@ -1,9 +1,10 @@
 [general]
-http_proxy = true
+httpproxy = true
+sqlite3file = port2container.db
 
 [nginx]
-http_port = 80
-https_port = 443
-conf_dir = /etc/nginx/sites-enabled/
+httpport = 80
+httpsport = 443
+confdir = /etc/nginx/sites-enabled/
 
 

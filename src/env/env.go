@@ -15,6 +15,7 @@ var cfg Config
 type Config struct {
     General struct {
         Httpproxy bool
+        Sqlite3file string
     }
     Nginx struct {
         Httpport int
