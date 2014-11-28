@@ -19,13 +19,16 @@ func main()  {
     // Load Env Value
     _, err := env.Load()    
     if err != nil {
-        fmt.Print(err)
+        fmt.Println(err)
         return
     }
 
     // Check Docker
     fmt.Println(docker.Path)
-    
+    output, err := docker.Exec("ps","-a");
+    if err == nil {
+        fmt.Printf("%s",output)
+    }
     if env.DEBUG {
     output,err := iptables.Exec("-L")
     fmt.Printf("Exec : %t",iptables.Exists(""))
