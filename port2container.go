@@ -8,7 +8,6 @@ import(
     "os"
 )
 
-
 func main()  {
 
     if os.Geteuid() != 0 {
@@ -23,12 +22,13 @@ func main()  {
         return
     }
 
-    // Check Docker
     fmt.Println(docker.Path)
-    output, err := docker.Exec("ps","-a");
+    output, err := docker.ExecCommand("ps","-a");
+    output, err = docker.JsonDecode();
     if err == nil {
         fmt.Printf("%s",output)
     }
+        fmt.Printf("%s",err)
     if env.DEBUG {
     output,err := iptables.Exec("-L")
     fmt.Printf("Exec : %t",iptables.Exists(""))
